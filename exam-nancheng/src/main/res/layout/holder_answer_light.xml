@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/sign_tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:drawableStart="@drawable/ic_answer_indicator_done"
+            android:drawablePadding="8dp"
+            android:text="当前关"
+            android:textColor="@color/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sign_tv_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawableStart="@drawable/ic_answer_indicator_current"
+            android:drawablePadding="8dp"
+            android:text="已闯关"
+            android:textColor="@color/title"
+            app:layout_constraintStart_toEndOf="@id/sign_tv_1"
+            app:layout_constraintTop_toTopOf="@+id/sign_tv_1" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawableStart="@drawable/ic_answer_indicator_todo"
+            android:drawablePadding="8dp"
+            android:text="未闯关"
+            android:textColor="@color/title"
+            app:layout_constraintStart_toEndOf="@id/sign_tv_2"
+            app:layout_constraintTop_toTopOf="@+id/sign_tv_1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sign_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:overScrollMode="never"
+            android:padding="16dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/answer_last"
+            app:layout_constraintTop_toBottomOf="@+id/sign_tv_1"
+            app:spanCount="5" />
+
+        <ImageView
+            android:id="@+id/answer_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="@string/img"
+            android:src="@drawable/bg_q_last"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/answer_next"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/answer_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/img"
+            android:src="@drawable/bg_q_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/answer_last"
+            app:layout_constraintTop_toTopOf="@+id/answer_last" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/multi_pos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="1."
+        tools:visibility="visible" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <CheckBox
+        android:id="@+id/multi_a"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/sel_multi_button"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="A"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_b"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/multi_b"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/sel_multi_button"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="B"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_c"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/multi_c"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/sel_multi_button"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="C"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_d"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/multi_d"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/sel_multi_button"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="D"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_e"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/multi_e"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/sel_multi_button"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="E"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_f"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/multi_f"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/sel_multi_button"
+        android:button="@null"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="F"
+        tools:visibility="visible" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+</LinearLayout>

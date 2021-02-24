@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/answer_draft"
+        android:icon="@drawable/ic_menu_draft"
+        android:title="草稿纸"
+        android:visible="true"
+        app:showAsAction="ifRoom|withText"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/answer_commit"
+        android:icon="@drawable/ic_menu_commit"
+        android:title="交卷"
+        android:visible="true"
+        app:showAsAction="ifRoom|withText"
+        tools:ignore="HardcodedText" />
+</menu>

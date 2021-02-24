@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <data>
+
+        <import type="com.diswy.foundation.tools.TimeKitJ" />
+
+        <variable
+            name="homework"
+            type="com.ebd.common.vo.Homework" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/shape_rect_white"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_subject_img"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:contentDescription="@string/img"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_work_subject_chinese" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:text="@{homework.Name}"
+            android:textColor="@color/title"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_subject_img"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="21 级寒假数学综合检测题" />
+
+        <TextView
+            android:id="@+id/tv_number_questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text='@{@string/homework_count(homework.count)}'
+            android:textColor="@color/subTitle"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tools:text="共 12 题" />
+
+        <TextView
+            android:id="@+id/tv_time_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{@string/homework_deadline(TimeKitJ.YMDHM(homework.canEndDateTime))}"
+            android:textColor="@color/subTitle"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_number_questions"
+            tools:text="截止时间：2019.9.9" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{homework.getWorkStatus()}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_time_out"
+            tools:text="新作业" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

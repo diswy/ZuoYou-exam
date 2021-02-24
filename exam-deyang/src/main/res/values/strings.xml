@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">巴川中学</string>
+
+    <string name="video_count">共 %1$s 节</string>
+    <string name="video_subject">学科：%1$s</string>
+    <string name="video_teacher">老师：%1$s</string>
+    <string name="video_start">开课时间：%1$s</string>
+    <string name="vod_time">%1$s</string>
+    <string name="video_start_end">时间：%1$s ~ %2$s</string>
+    <string name="homework_count">共 %1$s 题</string>
+    <string name="homework_deadline">截止时间：%1$s</string>
+    <string name="homework_wrong_count">做错 %1$s 题</string>
+    <string name="homework_share_student">%1$s 同学</string>
+    <string name="homework_share_teacher">老师：%1$s</string>
+
+    <!--  soe  -->
+    <string name="soe_suggest">%1$2.2f</string>
+    <string name="soe_completion">发音完整度：%1$2.2f</string>
+    <string name="soe_fluency">发音流利度：%1$2.2f</string>
+    <string name="soe_accuracy">发音准确度：%1$2.2f</string>
+
+    <!--  作答  -->
+    <string name="lostAnswer">答案同步失败，请检查网络，点击确定再次同步，点击取消，直接退出该页面。\n\n警告：直接退出可能会导致修改过的答案未同步到服务器，下次进来请检查答案。</string>
+    <string name="delImage">确认要删除该图片？</string>
+    <!--  点播  -->
+    <string name="lostRecord">视频记录同步失败，请检查网络，点击确定再次同步，点击取消，直接退出该页面。</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">你好！这里是四川巴川中学。\n\n一个你能找到乐趣，快乐成长，遇见更好的自己的地方！\n\n
+        你可能会好奇，巴川中学有什么？\n\n
+        全小班教学，五维自主教育，学科分层走班，项目式学习四大教育特色会让你耳目一新。\n\n
+        更有“四个一”工程让你在巴川体会独一无二的趣味。每天一节体育课，每天一节表达课，每周一节形体课，每周一节劳动课，让你在快乐学习的同时，获得全面发展。\n\n
+        你的成长，由巴川进行独特的教育私人订制。华罗庚英才计划，综合优秀培养，数学拔尖，小初高一体化……总有一款适合你。\n\n
+        在巴川，小班让你有更多的选择。你可以在课堂上与老师一同徜徉在知识的海洋，也可以在音乐教室中放声歌唱，你还可以在烹饪教室里接触人间百味，在戏剧场中演绎百样人生。\n\n
+        在巴川，你可以找到追逐梦想的渴望和动力；在巴川，你可以期待美好的发生；在巴川，你会遇见更好的自己！\n\n
+        看得见的成长时刻都在发生。说不尽的故事在巴川校园上演，每一刻的精彩都是最靓丽的景象，美好的画卷正徐徐展开。\n\n
+        你，准备好了吗？\n\n
+</string>
+
+</resources>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.homework.DraftActivity"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <com.zuoyouxue.view.doodle.Doodle
+            android:id="@+id/doodle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/control_group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/control_group"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/transBlack30"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/btn_paint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/draft_control_paint"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="画笔"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/btn_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableTop="@drawable/draft_control_color"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="颜色"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/btn_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableTop="@drawable/draft_control_weight"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="粗细"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/btn_eraser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableTop="@drawable/draft_control_eraser"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="橡皮"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_draft_clear"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="清空"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/control_shape"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:background="@color/transBlack30"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/control_group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/shape_path"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:checked="true"
+                android:drawableStart="@drawable/draft_paint_shape_path"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/shape_line"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:drawableStart="@drawable/draft_paint_shape_line"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/shape_rect"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:drawableStart="@drawable/draft_paint_shape_rect"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/shape_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:drawableStart="@drawable/draft_paint_shape_circle"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/control_color"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:background="@color/transBlack30"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/control_group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/color_red"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:checked="true"
+                android:drawableStart="@drawable/draft_paint_color_red"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/color_origin"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:drawableStart="@drawable/draft_paint_color_origin"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/color_yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:drawableStart="@drawable/draft_paint_color_yellow"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/color_green"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:drawableStart="@drawable/draft_paint_color_green"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <RadioButton
+                android:id="@+id/color_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:button="@null"
+                android:drawableStart="@drawable/draft_paint_color_blue"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/control_weight"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@color/transBlack30"
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/control_group"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <SeekBar
+                android:id="@+id/paint_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="50"
+                android:maxWidth="2dp"
+                android:maxHeight="2dp"
+                android:minWidth="2dp"
+                android:minHeight="2dp"
+                android:progress="0"
+                android:progressDrawable="@drawable/draft_paint_weight"
+                android:thumb="@drawable/ic_draft_paint_weight" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

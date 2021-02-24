@@ -1,0 +1,264 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.home.HomeFragment"
+    tools:ignore="HardcodedText">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.ebd.common.vo.User" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <ImageView
+                android:id="@+id/home_avatar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_default_avatar"
+                app:imgCircle="@{user.Avatar}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/home_work_status" />
+
+            <TextView
+                android:id="@+id/home_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{user.name}"
+                android:textColor="@color/title"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/home_avatar"
+                app:layout_constraintTop_toTopOf="@id/home_avatar"
+                tools:text="小小酥" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="好好学习，天天向上"
+                android:textColor="@color/implicit"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/home_avatar"
+                app:layout_constraintStart_toStartOf="@id/home_name"
+                app:layout_constraintTop_toBottomOf="@+id/home_name" />
+
+            <ImageView
+                android:id="@+id/home_work_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="64dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/bg_home_no_work"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ViewFlipper
+                android:id="@+id/home_flipper"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:autoStart="true"
+                android:background="@drawable/shape_round_home_notice"
+                android:flipInterval="5000"
+                android:inAnimation="@anim/scroller_bottom_in"
+                android:outAnimation="@anim/scroller_top_out"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/home_work_status"
+                app:layout_constraintStart_toStartOf="@+id/home_avatar"
+                app:layout_constraintTop_toBottomOf="@+id/home_avatar"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/home_horn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_home_horn"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/home_flipper"
+                app:layout_constraintStart_toStartOf="@id/home_flipper"
+                app:layout_constraintTop_toTopOf="@id/home_flipper"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/home_my_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:drawableTop="@drawable/ic_home_my_work"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="我的作业"
+                android:textColor="@color/homeTitle"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/home_my_error"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_work_status" />
+
+            <TextView
+                android:id="@+id/home_my_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_home_my_error_book"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="我的错题"
+                android:textColor="@color/homeTitle"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/home_work_share"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_my_work"
+                app:layout_constraintTop_toTopOf="@id/home_my_work" />
+
+            <TextView
+                android:id="@+id/home_work_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_home_work_share"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="作业分享"
+                android:textColor="@color/homeTitle"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/home_work_collection"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_my_error"
+                app:layout_constraintTop_toTopOf="@id/home_my_work" />
+
+            <TextView
+                android:id="@+id/home_work_collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_home_work_collection"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="作业收藏"
+                android:textColor="@color/homeTitle"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/home_my_video"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_work_share"
+                app:layout_constraintTop_toTopOf="@id/home_my_work" />
+
+            <TextView
+                android:id="@+id/home_my_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_home_my_video"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="我的课程"
+                android:textColor="@color/homeTitle"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/home_my_schedule"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_work_collection"
+                app:layout_constraintTop_toTopOf="@id/home_my_work" />
+
+            <TextView
+                android:id="@+id/home_my_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_home_my_schedule"
+                android:drawablePadding="8dp"
+                android:gravity="center"
+                android:text="我的课表"
+                android:textColor="@color/homeTitle"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_my_video"
+                app:layout_constraintTop_toTopOf="@id/home_my_work" />
+
+            <TextView
+                android:id="@+id/home_holder_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="大家都在看"
+                android:textColor="@color/homeDeep"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/home_avatar"
+                app:layout_constraintTop_toBottomOf="@+id/home_my_work" />
+
+            <ImageView
+                android:id="@+id/home_lib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_home_lib"
+                app:layout_constraintEnd_toStartOf="@+id/home_file"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@+id/home_holder_tv"
+                app:layout_constraintTop_toBottomOf="@+id/home_holder_tv" />
+
+            <ImageView
+                android:id="@+id/home_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="64dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_home_file"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_lib"
+                app:layout_constraintTop_toTopOf="@+id/home_lib" />
+
+            <ImageView
+                android:id="@+id/home_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_home_need_help"
+                app:layout_constraintEnd_toStartOf="@+id/home_us"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="@+id/home_lib"
+                app:layout_constraintTop_toBottomOf="@+id/home_lib" />
+
+            <ImageView
+                android:id="@+id/home_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_home_contact_us"
+                app:layout_constraintEnd_toEndOf="@+id/home_file"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_help"
+                app:layout_constraintTop_toTopOf="@+id/home_help" />
+
+<!--            <ImageView-->
+<!--                android:id="@+id/test_iv"-->
+<!--                android:src="@mipmap/ic_launcher"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

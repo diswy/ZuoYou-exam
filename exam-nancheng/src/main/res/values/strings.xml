@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">南城巴川</string>
+
+    <string name="video_count">共 %1$s 节</string>
+    <string name="video_subject">学科：%1$s</string>
+    <string name="video_teacher">老师：%1$s</string>
+    <string name="video_start">开课时间：%1$s</string>
+    <string name="vod_time">%1$s</string>
+    <string name="video_start_end">时间：%1$s ~ %2$s</string>
+    <string name="homework_count">共 %1$s 题</string>
+    <string name="homework_deadline">截止时间：%1$s</string>
+    <string name="homework_wrong_count">做错 %1$s 题</string>
+    <string name="homework_share_student">%1$s 同学</string>
+    <string name="homework_share_teacher">老师：%1$s</string>
+
+    <!--  soe  -->
+    <string name="soe_suggest">%1$2.2f</string>
+    <string name="soe_completion">发音完整度：%1$2.2f</string>
+    <string name="soe_fluency">发音流利度：%1$2.2f</string>
+    <string name="soe_accuracy">发音准确度：%1$2.2f</string>
+
+    <!--  作答  -->
+    <string name="lostAnswer">答案同步失败，请检查网络，点击确定再次同步，点击取消，直接退出该页面。\n\n警告：直接退出可能会导致修改过的答案未同步到服务器，下次进来请检查答案。</string>
+    <string name="delImage">确认要删除该图片？</string>
+    <!--  点播  -->
+    <string name="lostRecord">视频记录同步失败，请检查网络，点击确定再次同步，点击取消，直接退出该页面。</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">\n\t\t\t\t你好！欢迎来到重庆南城巴川学校。
+			\n\n\t\t\t\t南城巴川，是中国教育巴川系办学版图中又一所高起点新校。学校校园规划面积160亩，建筑面积16万余平米，有小学、初中、高中三个学段，近200个教学班，可容纳近万名学生在校就读。
+			\n\n\t\t\t\t南城巴川，依托中国云教育产业园优势，按照“未来学校”的美好愿景高标准打造，拥有优美的校园环境、完备先进的教学设施、一流的师资队伍、科学的管理理念。以“守正创新，精致服务”为办学方略。坚持党的教育方针，遵循教育规律，传承巴川精髓；以自主教育、艺术教育和科创云课堂三大办学特色为抓手。创新育人手段，改进教学方法，办有温度的学校，为家长、学生提供精致服务。</string>
+
+</resources>

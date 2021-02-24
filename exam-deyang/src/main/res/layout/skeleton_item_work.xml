@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_rect_white"
+        android:padding="16dp">
+
+        <View
+            android:id="@+id/iv_subject_img"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@color/skeleton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/skeleton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_subject_img"
+            app:layout_constraintTop_toTopOf="@+id/iv_subject_img" />
+
+        <View
+            android:id="@+id/tv_number_questions"
+            android:layout_width="48dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/skeleton"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <View
+            android:id="@+id/tv_time_out"
+            android:layout_width="118dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/skeleton"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_number_questions" />
+
+        <View
+            android:id="@+id/tv_status"
+            android:layout_width="36dp"
+            android:layout_height="12dp"
+            android:background="@color/skeleton"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/tv_time_out" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_rect_white"
+        android:padding="16dp">
+
+        <View
+            android:id="@+id/iv_subject_img2"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@color/skeleton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/tv_name2"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="16dp"
+            android:background="@color/skeleton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_subject_img2"
+            app:layout_constraintTop_toTopOf="@+id/iv_subject_img2" />
+
+        <View
+            android:id="@+id/tv_number_questions2"
+            android:layout_width="48dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/skeleton"
+            app:layout_constraintStart_toStartOf="@id/tv_name2"
+            app:layout_constraintTop_toBottomOf="@id/tv_name2" />
+
+        <View
+            android:id="@+id/tv_time_out2"
+            android:layout_width="118dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/skeleton"
+            app:layout_constraintStart_toStartOf="@id/tv_name2"
+            app:layout_constraintTop_toBottomOf="@id/tv_number_questions2" />
+
+        <View
+            android:id="@+id/tv_status2"
+            android:layout_width="36dp"
+            android:layout_height="12dp"
+            android:background="@color/skeleton"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name2"
+            app:layout_constraintTop_toTopOf="@id/tv_time_out2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

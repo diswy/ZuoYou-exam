@@ -1,0 +1,87 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.homework.HomeworkFragment"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/main_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:text="作业"
+            android:textColor="@color/title"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="好好学习，天天向上"
+            android:textColor="@color/title"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/main_work" />
+
+        <View
+            android:id="@+id/demarcation_line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_work" />
+
+        <ImageView
+            android:id="@+id/btn_do_work"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/img"
+            android:src="@drawable/ic_work_do_work"
+            app:layout_constraintEnd_toStartOf="@+id/btn_error_book"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/demarcation_line" />
+
+        <ImageView
+            android:id="@+id/btn_error_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/img"
+            android:src="@drawable/ic_work_error_book"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_do_work"
+            app:layout_constraintTop_toTopOf="@+id/btn_do_work" />
+
+        <ImageView
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/img"
+            android:src="@drawable/ic_work_share"
+            app:layout_constraintStart_toStartOf="@id/btn_do_work"
+            app:layout_constraintTop_toBottomOf="@id/btn_do_work" />
+
+        <ImageView
+            android:id="@+id/btn_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/img"
+            android:src="@drawable/ic_work_collection"
+            app:layout_constraintEnd_toEndOf="@+id/btn_error_book"
+            app:layout_constraintTop_toTopOf="@id/btn_share" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

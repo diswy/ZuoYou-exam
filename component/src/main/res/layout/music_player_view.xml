@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageButton
+            android:id="@+id/music_play_pause"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:contentDescription="@string/img"
+            android:src="@drawable/ic_music_play"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/music_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/music_seek"
+            app:layout_constraintStart_toStartOf="@+id/music_seek"
+            tools:text="00:00" />
+
+        <SeekBar
+            android:id="@+id/music_seek"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:max="100"
+            app:layout_constraintBottom_toBottomOf="@+id/music_wave"
+            app:layout_constraintEnd_toStartOf="@+id/music_wave"
+            app:layout_constraintStart_toEndOf="@+id/music_play_pause" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/music_wave"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_fileName="music-voice-wave.json"
+            app:lottie_repeatCount="-1"
+            app:lottie_repeatMode="restart"
+            app:lottie_speed="2.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

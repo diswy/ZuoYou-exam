@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@color/white"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="0dp">
+
+    <TextView
+        android:id="@+id/tv_subject_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        tools:text="语文" />
+
+    <ImageView
+        android:id="@+id/iv_subject"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_gravity="center_vertical|end"
+        android:contentDescription="@string/img"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        tools:src="@drawable/ic_wrong_work_subject_cn" />
+
+</com.google.android.material.card.MaterialCardView>

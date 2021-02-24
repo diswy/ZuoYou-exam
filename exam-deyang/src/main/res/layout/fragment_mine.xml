@@ -1,0 +1,307 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.user.MineFragment"
+    tools:ignore="HardcodedText">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.ebd.common.vo.User" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="32dp">
+
+            <ImageView
+                android:id="@+id/user_civ_avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="64dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_default_avatar"
+                app:imgCircle="@{user.Avatar}"
+                app:layout_constraintEnd_toEndOf="@+id/user_flower"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/user_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="16dp"
+                android:text="@{user.name}"
+                android:textColor="@color/title"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/user_civ_avatar"
+                app:layout_constraintTop_toTopOf="@id/user_civ_avatar"
+                tools:text="小小酥" />
+
+            <TextView
+                android:id="@+id/user_tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/user_tv_name"
+                app:layout_constraintTop_toBottomOf="@id/user_tv_name"
+                tools:text="未绑定手机号码" />
+
+            <TextView
+                android:id="@+id/btn_work_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_user_work_message"
+                android:drawablePadding="4dp"
+                android:padding="16dp"
+                android:text="消息"
+                android:textColor="@color/title"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/user_award"
+                app:layout_constraintTop_toTopOf="@+id/user_civ_avatar" />
+
+            <FrameLayout
+                android:id="@+id/user_flower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/bg_user_red_flower"
+                app:layout_constraintEnd_toStartOf="@+id/user_award"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_civ_avatar">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:text="@{String.valueOf(user.Flower)}"
+                    android:textColor="@color/colorHonor"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    tools:text="6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="8dp"
+                    android:text="红花"
+                    android:textColor="@color/colorHonor"
+                    android:textSize="18sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/user_award"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_user_award"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/user_flower"
+                app:layout_constraintTop_toTopOf="@+id/user_flower">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="32dp"
+                    android:text="@{String.valueOf(user.Medal)}"
+                    android:textColor="@color/colorHonor"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    tools:text="18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginTop="8dp"
+                    android:text="奖状"
+                    android:textColor="@color/colorHonor"
+                    android:textSize="18sp" />
+
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/btn_honor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_user_honor"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/btn_leader"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_flower" />
+
+            <ImageView
+                android:id="@+id/btn_leader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_user_manager"
+                app:goneUnless="@{user.isGroup}"
+                app:layout_constraintEnd_toStartOf="@+id/btn_feed_back"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_honor"
+                app:layout_constraintTop_toBottomOf="@+id/user_flower"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/btn_feed_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_user_feedback"
+                app:layout_constraintEnd_toStartOf="@+id/btn_modify_password"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_leader"
+                app:layout_constraintTop_toTopOf="@+id/btn_leader" />
+
+            <ImageView
+                android:id="@+id/btn_modify_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_user_modify_pwd"
+                app:layout_constraintEnd_toStartOf="@+id/btn_clear_cache"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_feed_back"
+                app:layout_constraintTop_toTopOf="@+id/btn_leader" />
+
+            <ImageView
+                android:id="@+id/btn_clear_cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_user_clear_cache"
+                app:layout_constraintEnd_toStartOf="@+id/btn_about_us"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_modify_password"
+                app:layout_constraintTop_toTopOf="@+id/btn_leader" />
+
+            <ImageView
+                android:id="@+id/btn_about_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_setting_about_us"
+                app:layout_constraintEnd_toStartOf="@+id/btn_logout"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_clear_cache"
+                app:layout_constraintTop_toTopOf="@+id/btn_leader" />
+
+            <ImageView
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_user_logout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btn_about_us"
+                app:layout_constraintTop_toTopOf="@+id/btn_leader" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="荣誉榜"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/btn_honor"
+                app:layout_constraintStart_toStartOf="@+id/btn_honor"
+                app:layout_constraintTop_toBottomOf="@+id/btn_honor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="小组长管理"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                app:goneUnless="@{user.isGroup}"
+                app:layout_constraintEnd_toEndOf="@+id/btn_leader"
+                app:layout_constraintStart_toStartOf="@+id/btn_leader"
+                app:layout_constraintTop_toBottomOf="@+id/btn_leader"
+                tools:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="问题反馈"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_feed_back"
+                app:layout_constraintStart_toStartOf="@+id/btn_feed_back"
+                app:layout_constraintTop_toBottomOf="@+id/btn_feed_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="修改密码"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_modify_password"
+                app:layout_constraintStart_toStartOf="@+id/btn_modify_password"
+                app:layout_constraintTop_toBottomOf="@+id/btn_modify_password" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="清除缓存"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_clear_cache"
+                app:layout_constraintStart_toStartOf="@+id/btn_clear_cache"
+                app:layout_constraintTop_toBottomOf="@+id/btn_clear_cache" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="关于点点课"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_about_us"
+                app:layout_constraintStart_toStartOf="@+id/btn_about_us"
+                app:layout_constraintTop_toBottomOf="@+id/btn_about_us" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="退出登录"
+                android:textColor="@color/title"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_logout"
+                app:layout_constraintStart_toStartOf="@+id/btn_logout"
+                app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

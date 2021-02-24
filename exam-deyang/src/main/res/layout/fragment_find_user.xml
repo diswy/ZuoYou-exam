@@ -1,0 +1,104 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.user.FindUserFragment"
+    tools:ignore="Autofill,HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="22dp"
+            android:contentDescription="@string/img"
+            android:padding="8dp"
+            android:src="@drawable/ic_btn_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/findUser_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="128dp"
+            android:text="忘记账号"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/holder_find_identity"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/findUser_second_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="别着急！可以找回你的账号"
+            android:textColor="@color/implicit"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/findUser_logo"
+            app:layout_constraintTop_toBottomOf="@id/findUser_logo" />
+
+        <com.diswy.foundation.view.FancyGroup
+            android:id="@+id/holder_find_identity"
+            android:layout_width="512dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="30dp"
+            android:orientation="vertical"
+            app:fg_shape="rounded"
+            app:fg_solid_normal="@color/loginInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/findUser_second_logo">
+
+            <EditText
+                android:id="@+id/et_identity"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@null"
+                android:hint="请输入你的身份证号"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="16sp" />
+
+        </com.diswy.foundation.view.FancyGroup>
+
+        <TextView
+            android:id="@+id/tv_find_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="身份证号码不能为空哦！请您重新输入"
+            android:textColor="@color/colorWarn"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/holder_find_identity"
+            app:layout_constraintTop_toBottomOf="@+id/holder_find_identity"
+            tools:visibility="visible" />
+
+        <com.diswy.foundation.view.FancyButton
+            android:id="@+id/btn_find"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="54dp"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fb_shape="rounded"
+            app:fb_solid_normal="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@+id/holder_find_identity"
+            app:layout_constraintStart_toStartOf="@id/holder_find_identity"
+            app:layout_constraintTop_toBottomOf="@id/holder_find_identity" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

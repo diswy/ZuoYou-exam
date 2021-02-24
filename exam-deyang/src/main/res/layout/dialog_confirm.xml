@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_end_confirm"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.zuoyouxue.view.font.FancyFont
+            android:id="@+id/tv_main_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="你确定要结束闯关吗？"
+            android:textColor="#6CA422"
+            android:textSize="24sp"
+            app:ff_type="SHAOER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/holder_hint_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_main_msg"
+            tools:visibility="visible">
+
+            <com.zuoyouxue.view.font.FancyFont
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你还有"
+                android:textColor="@color/subTitle"
+                android:textSize="20sp"
+                app:ff_type="SHAOER" />
+
+            <com.zuoyouxue.view.font.FancyFont
+                android:id="@+id/tv_sub_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="#6CA422"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="12" />
+
+            <com.zuoyouxue.view.font.FancyFont
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="关卡未闯"
+                android:textColor="@color/subTitle"
+                android:textSize="20sp"
+                app:ff_type="SHAOER" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/ic_dialog_btn_cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dialog_confirm"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/holder_hint_text" />
+
+        <TextView
+            android:id="@+id/dialog_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_dialog_btn_confirm"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/dialog_close"
+            app:layout_constraintTop_toTopOf="@id/dialog_close" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,206 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.user.ResetPwdFragment"
+    tools:ignore="Autofill,HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="22dp"
+            android:contentDescription="@string/img"
+            android:padding="8dp"
+            android:src="@drawable/ic_btn_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/resetPwd_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="忘记密码"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/holder_user_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/resetPwd_second_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="别着急！你可以设置新密码"
+            android:textColor="@color/implicit"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/resetPwd_logo"
+            app:layout_constraintTop_toBottomOf="@id/resetPwd_logo" />
+
+        <com.diswy.foundation.view.FancyGroup
+            android:id="@+id/holder_user_name"
+            android:layout_width="512dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            app:fg_shape="rounded"
+            app:fg_solid_normal="@color/loginInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resetPwd_second_logo">
+
+            <EditText
+                android:id="@+id/et_login_name"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@null"
+                android:hint="请输入您的账号"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.diswy.foundation.view.FancyButton
+                android:id="@+id/btn_identifying_code"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="32dp"
+                android:background="#9c0"
+                android:gravity="center"
+                android:text="获取验证码"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:fb_corner_radius="4dp"
+                app:fb_shape="rect"
+                app:fb_solid_normal="@color/colorAccent"
+                app:fb_disable_color="@color/colorDisable"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/et_login_name"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.diswy.foundation.view.FancyGroup>
+
+        <com.diswy.foundation.view.FancyGroup
+            android:id="@+id/holder_identifying_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:fg_shape="rounded"
+            app:fg_solid_normal="@color/loginInput"
+            app:layout_constraintEnd_toEndOf="@+id/holder_user_name"
+            app:layout_constraintStart_toStartOf="@+id/holder_user_name"
+            app:layout_constraintTop_toBottomOf="@id/holder_user_name">
+
+            <EditText
+                android:id="@+id/et_identifying_code"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@null"
+                android:hint="请输入验证码"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="16sp" />
+        </com.diswy.foundation.view.FancyGroup>
+
+        <com.diswy.foundation.view.FancyGroup
+            android:id="@+id/holder_new_pwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:fg_shape="rounded"
+            app:fg_solid_normal="@color/loginInput"
+            app:layout_constraintEnd_toEndOf="@+id/holder_user_name"
+            app:layout_constraintStart_toStartOf="@+id/holder_user_name"
+            app:layout_constraintTop_toBottomOf="@id/holder_identifying_code">
+
+            <EditText
+                android:id="@+id/et_new_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@null"
+                android:hint="密码长度至少6位，最多16个字符"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:singleLine="true"
+                android:textSize="16sp" />
+        </com.diswy.foundation.view.FancyGroup>
+
+        <com.diswy.foundation.view.FancyGroup
+            android:id="@+id/holder_repeat_new_pwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            app:fg_shape="rounded"
+            app:fg_solid_normal="@color/loginInput"
+            app:layout_constraintEnd_toEndOf="@+id/holder_user_name"
+            app:layout_constraintStart_toStartOf="@+id/holder_user_name"
+            app:layout_constraintTop_toBottomOf="@id/holder_new_pwd">
+
+            <EditText
+                android:id="@+id/et_repeat_new_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@null"
+                android:hint="请再次输入新密码"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+        </com.diswy.foundation.view.FancyGroup>
+
+        <TextView
+            android:id="@+id/reset_pwd_error_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="你输入的信息有误，请重新输入"
+            android:textColor="@color/colorWarn"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/holder_repeat_new_pwd"
+            app:layout_constraintStart_toStartOf="@+id/holder_repeat_new_pwd"
+            app:layout_constraintTop_toBottomOf="@+id/holder_repeat_new_pwd"
+            tools:visibility="visible" />
+
+        <com.diswy.foundation.view.FancyButton
+            android:id="@+id/btn_findPwd_submit"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="42dp"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fb_shape="rounded"
+            app:fb_solid_normal="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@+id/holder_repeat_new_pwd"
+            app:layout_constraintStart_toStartOf="@id/holder_repeat_new_pwd"
+            app:layout_constraintTop_toBottomOf="@id/holder_repeat_new_pwd" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

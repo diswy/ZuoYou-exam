@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="answer_bottom_bar">100dp</dimen>
+    <dimen name="player_height">280dp</dimen>
+    <dimen name="banner_height">180dp</dimen>
+    <dimen name="dialog_width">730px</dimen>
+</resources>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zuoyouxue"
+    tools:ignore="LockedOrientationActivity">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 权限声明 -->
+    <!-- 控制呼吸灯，振动器等，用于新消息提醒 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 8.0 系统需要 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- 多媒体相关 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 如果需要实时音视频通话模块，下面的权限也是必须的。否则，可以不加 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 配置权限，已经配置过的条目则无须添加 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" /> <!-- SDK 权限申明, 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <!-- 和下面的 uses-permission 一起加入到你的 AndroidManifest 文件中。 -->
+    <permission
+        android:name="${applicationId}.permission.RECEIVE_MSG"
+        android:protectionLevel="signature" /> <!-- 接收 SDK 消息广播权限， 第三方 APP 接入时，请将 com.netease.nim.demo 替换为自己的包名 -->
+    <uses-permission android:name="${applicationId}.permission.RECEIVE_MSG" />
+
+    <application
+        android:name="com.ebd.common.App"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".ui.EndActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.InfoActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.homework.DraftActivity"
+            android:theme="@style/ActivityTranslucent" />
+        <activity android:name=".ui.home.FileActivity" />
+        <activity android:name=".ui.ImagePreviewActivity" />
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5e9568c80cafb26d78000364" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="zyx-pad" />
+
+        <service
+            android:name=".service.EyeService"
+            android:enabled="true"
+            android:exported="false" /> <!-- 5da8d352cb58fe86adc5b2b16e313c1c -->
+        <meta-data
+            android:name="com.netease.nim.appKey"
+            android:value="5da8d352cb58fe86adc5b2b16e313c1c" /> <!-- 云信后台服务，请使用独立进程。 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService"
+            android:process=":core" /> <!-- 云信后台辅助服务 -->
+        <service
+            android:name="com.netease.nimlib.service.NimService$Aux"
+            android:process=":core" /> <!-- 云信后台辅助服务 -->
+        <service
+            android:name="com.netease.nimlib.job.NIMJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:process=":core" /> <!-- 云信监视系统启动和网络变化的广播接收器，保持和 NimService 同一进程 -->
+        <receiver
+            android:name="com.netease.nimlib.service.NimReceiver"
+            android:exported="false"
+            android:process=":core">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver> <!-- 云信进程间通信 Receiver -->
+        <receiver android:name="com.netease.nimlib.service.ResponseReceiver" /> <!-- 云信进程间通信service -->
+        <service android:name="com.netease.nimlib.service.ResponseService" /> <!-- 云信进程间通信provider -->
+        <!-- android:authorities="{包名}.ipc.provider", 请将com.netease.nim.demo替换为自己的包名 -->
+        <provider
+            android:name="com.netease.nimlib.ipc.NIMContentProvider"
+            android:authorities="${applicationId}.ipc.provider"
+            android:exported="false"
+            android:process=":core" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"
+                tools:replace="android:resource" />
+        </provider>
+
+        <activity
+            android:name=".ui.SplashActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.EbdWebActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.user.LoginActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.homework.AnswerActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.video.ScheduleActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.homework.TaskSortActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.homework.AttachmentActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.MediaActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.video.VodActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.user.ModifyPasswordActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.user.SettingActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.user.FeedBackActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".ui.homework.TeacherSharedActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.homework.WrongPaperActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.homework.WrongContentActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.homework.MyWrongActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.homework.CollectionActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.user.MessageActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.user.HonorDetailsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.user.HonorActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.video.VideoListActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.homework.MyWorkActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.video.VideoActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.GankaoLibActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.video.ObsLiveActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ui.user.AboutUsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.qingmei2.rximagepicker_extension_zhihu.ui.ZhihuImagePickerActivity"
+            android:screenOrientation="landscape"
+            tools:replace="screenOrientation" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            tools:replace="screenOrientation" />
+    </application>
+
+</manifest>

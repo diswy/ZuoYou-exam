@@ -1,0 +1,8 @@
+//include ':exam-bb'
+//include ':exam-deyang'
+include ':exam-nancheng'
+include ':foundation'
+include ':common-data'
+include ':playerkit'
+include ':component'
+rootProject.name = 'zuoyouxue'

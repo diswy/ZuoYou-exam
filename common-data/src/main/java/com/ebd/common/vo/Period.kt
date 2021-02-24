@@ -1,0 +1,31 @@
+package com.ebd.common.vo
+
+data class Period(
+    val CanPlayDateTime: String,
+    val CourseId: Int,
+    val Day: String,
+    val Durartion: Int,
+    val GradeId: Int,
+    val GradeName: String,
+    val HasChannel: Int,
+    val HasChat: Int,
+    val HasIWB: Int,
+    val HasVchat: Int,
+    val Id: Int,
+    val IsFeedback: Boolean,
+    val LiveProvider: String,
+    val Name: String,
+    val PlanStartDate: String,
+    val RegisterNumber: Int,
+    val SchoolId: Int,
+    val SectionsId: Int,
+    val Snapshoot: String,
+    val StartDateTime: Long,
+    val Status: Int,
+    val SubjectTypeId: Int,
+    val TeacherId: Int,
+    val TeacherName: String,
+    val TeachingMaterialSectionId: Int,
+    val TeachingMaterialTypeId: Int,
+    val Type: Int
+)

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheckBox xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cb_definition"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:button="@null"
+    android:gravity="center"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:textColor="@drawable/speed_text_color"
+    tools:background="@color/control"
+    tools:text="1080P" />

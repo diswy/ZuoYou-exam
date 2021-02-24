@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.user.FeedBackActivity"
+    tools:ignore="HardcodedText,Autofill">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/feed_back_tv_request_type_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="问题类型"
+            android:textColor="@color/title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/feed_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feed_back_tv_request_type_title">
+
+            <RadioButton
+                android:id="@+id/type_question"
+                android:layout_width="96dp"
+                android:layout_height="32dp"
+                android:background="@drawable/sel_feed_back"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="问题反馈"
+                android:textColor="@drawable/sel_feed_back_tv" />
+
+            <RadioButton
+                android:id="@+id/type_advise"
+                android:layout_width="96dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/sel_feed_back"
+                android:button="@null"
+                android:gravity="center"
+                android:text="功能建议"
+                android:textColor="@drawable/sel_feed_back_tv" />
+
+            <RadioButton
+                android:id="@+id/type_other"
+                android:layout_width="96dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/sel_feed_back"
+                android:button="@null"
+                android:gravity="center"
+                android:text="其他"
+                android:textColor="@drawable/sel_feed_back_tv" />
+
+        </RadioGroup>
+
+        <View
+            android:id="@+id/feed_back_divider"
+            android:layout_width="wrap_content"
+            android:layout_height="4dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feed_rg" />
+
+        <EditText
+            android:id="@+id/feed_et"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="32dp"
+            android:background="@null"
+            android:gravity="start|top"
+            android:hint="欢迎你提出各种建议或吐槽"
+            android:inputType="text"
+            android:maxLength="128"
+            android:padding="20dp"
+            android:textColor="@color/implicit"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feed_back_divider" />
+
+        <com.diswy.foundation.view.FancyButton
+            android:id="@+id/feed_commit"
+            android:layout_width="180dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fb_ripple="false"
+            app:fb_shape="rounded"
+            app:fb_solid_normal="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/feed_et" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

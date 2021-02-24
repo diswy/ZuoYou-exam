@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.GankaoLibActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.ebd.common.web.view.FancyWeb
+            android:id="@+id/gan_web"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/gan_permission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/ic_no_permission"
+            android:drawablePadding="16dp"
+            android:gravity="center"
+            android:text="您暂无使用权限!"
+            android:textColor="@color/title"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:ignore="HardcodedText"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+</layout>

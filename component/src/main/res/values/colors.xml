@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="control">#66000000</color>
+    <color name="myPrimary">#10C360</color>
+    <color name="recordConfirm">#118CFF</color>
+</resources>

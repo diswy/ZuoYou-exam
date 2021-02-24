@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.video.ScheduleActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/calendar_month_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/title"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/calendar_ic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/calendar_ic"
+            tools:text="4月8日" />
+
+        <TextView
+            android:id="@+id/calendar_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/calendar_month_day"
+            app:layout_constraintTop_toTopOf="@+id/calendar_month_day"
+            tools:text="2020" />
+
+        <TextView
+            android:id="@+id/calendar_lunar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/calendar_month_day"
+            app:layout_constraintStart_toEndOf="@+id/calendar_month_day"
+            tools:text="二十六" />
+
+        <ImageView
+            android:id="@+id/calendar_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/img"
+            android:src="@mipmap/ic_calendar"
+            android:tint="@color/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/calendar_cur_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/title"
+            app:layout_constraintBottom_toBottomOf="@id/calendar_ic"
+            app:layout_constraintEnd_toEndOf="@id/calendar_ic"
+            app:layout_constraintStart_toStartOf="@id/calendar_ic"
+            app:layout_constraintTop_toTopOf="@id/calendar_ic"
+            tools:text="8" />
+
+        <com.haibin.calendarview.CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:current_month_lunar_text_color="#CFCFCF"
+            app:current_month_text_color="#333333"
+            app:day_text_size="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/calendar_ic"
+            app:lunar_text_size="8sp"
+            app:min_year="2004"
+            app:month_view="kit.diswy.calendar.IndexMonthView"
+            app:month_view_show_mode="mode_fix"
+            app:other_month_text_color="#e1e1e1"
+            app:scheme_text="假"
+            app:scheme_text_color="#333"
+            app:scheme_theme_color="#128c4b"
+            app:selected_lunar_text_color="#CFCFCF"
+            app:selected_text_color="#333"
+            app:selected_theme_color="#80cfcfcf"
+            app:week_background="#fff"
+            app:week_text_color="#111"
+            app:week_view="kit.diswy.calendar.IndexWeekView"
+            app:year_view_day_text_color="#333333"
+            app:year_view_day_text_size="8sp"
+            app:year_view_month_text_color="#ff0000"
+            app:year_view_month_text_size="20sp"
+            app:year_view_scheme_color="#f17706"
+            tools:layout_editor_absoluteX="12dp" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/calendar_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calendarView">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/calendar_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

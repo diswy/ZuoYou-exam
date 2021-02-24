@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':foundation')
+    implementation project(':playerkit')
+
+    api 'com.github.yalantis:ucrop:2.2.4'
+    api 'com.github.qingmei2:rximagepicker:2.5.6'
+    api 'com.github.qingmei2:rximagepicker_support:2.5.6'
+    api 'com.github.qingmei2:rximagepicker_support_zhihu:2.5.6'
+
+    api 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    api 'com.tencent.taisdk:taisdk:1.2.3.3'
+
+    api 'com.haibin:calendarview:3.6.7'
+
+    api 'com.netease.nimlib:basesdk:5.1.1'
+    api 'com.netease.nimlib:nrtc:5.1.1'
+    api 'com.netease.nimlib:avchat:5.1.1'
+    api 'com.netease.nimlib:chatroom:5.1.1'
+    api 'com.netease.nimlib:rts:5.1.1'
+
+    api 'com.google.android.exoplayer:exoplayer:2.7.3'
+    api 'com.google.android.exoplayer:extension-rtmp:2.7.3'
+}

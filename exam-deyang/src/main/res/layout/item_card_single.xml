@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/single_group"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <com.zuoyouxue.view.font.FancyFont
+        android:id="@+id/single_pos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#A6D028"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:ff_type="SHAOER"
+        tools:text="1."
+        tools:visibility="visible" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <RadioButton
+        android:id="@+id/single_a"
+        style="@style/CardSingleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="A"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_b"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <RadioButton
+        android:id="@+id/single_b"
+        style="@style/CardSingleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="B"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_c"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <RadioButton
+        android:id="@+id/single_c"
+        style="@style/CardSingleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="C"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_d"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <RadioButton
+        android:id="@+id/single_d"
+        style="@style/CardSingleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="D"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_e"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <RadioButton
+        android:id="@+id/single_e"
+        style="@style/CardSingleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="E"
+        tools:visibility="visible" />
+
+    <Space
+        android:id="@+id/space_f"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <RadioButton
+        android:id="@+id/single_f"
+        style="@style/CardSingleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="F"
+        tools:visibility="visible" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+</RadioGroup>

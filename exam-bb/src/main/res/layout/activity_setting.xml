@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.user.SettingActivity"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/setting_modify_pwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_user_modify_pwd"
+            android:drawableEnd="@drawable/ic_item_list_end"
+            android:drawablePadding="16dp"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="修改密码"
+            android:textColor="@color/title"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/setting_clear_cache"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:drawableStart="@drawable/ic_user_clear_cache"
+            android:drawableEnd="@drawable/ic_item_list_end"
+            android:drawablePadding="16dp"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="清除缓存"
+            android:textColor="@color/title"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/setting_modify_pwd" />
+
+        <TextView
+            android:id="@+id/setting_cache_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/setting_clear_cache"
+            app:layout_constraintEnd_toEndOf="@+id/setting_clear_cache"
+            app:layout_constraintTop_toTopOf="@+id/setting_clear_cache"
+            tools:text="30.00MB" />
+
+        <TextView
+            android:id="@+id/setting_about_us"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:drawableStart="@drawable/ic_setting_about_us"
+            android:drawableEnd="@drawable/ic_item_list_end"
+            android:drawablePadding="16dp"
+            android:gravity="center_vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="关于点点课"
+            android:textColor="@color/title"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/setting_clear_cache" />
+
+        <com.diswy.foundation.view.FancyButton
+            android:id="@+id/log_out"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fb_shape="rounded"
+            app:fb_solid_normal="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

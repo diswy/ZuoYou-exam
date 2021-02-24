@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FancyFont">
+        <attr name="ff_type" format="enum">
+            <enum name="HUPO" value="101" />
+            <enum name="SHAOER" value="102" />
+        </attr>
+    </declare-styleable>
+
+</resources>

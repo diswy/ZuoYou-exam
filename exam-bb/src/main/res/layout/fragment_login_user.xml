@@ -1,0 +1,202 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.user.LoginUserFragment"
+    tools:ignore="HardcodedText,Autofill">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_exam_login">
+
+        <com.zuoyouxue.view.font.FancyFont
+            android:id="@+id/login_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="欢迎来到巴川中学"
+            android:textColor="#234806"
+            android:textSize="36sp"
+            app:ff_type="SHAOER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.zuoyouxue.view.font.FancyFont
+            android:id="@+id/login_second_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Welcome to Bachuan school"
+            android:textColor="#234806"
+            android:textSize="16sp"
+            app:ff_type="SHAOER"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_logo" />
+
+        <com.diswy.foundation.view.FancyGroup
+            android:id="@+id/holder_login_account"
+            android:layout_width="512dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="vertical"
+            app:fg_shape="rounded"
+            app:fg_solid_normal="@color/loginInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_second_logo">
+
+            <EditText
+                android:id="@+id/et_account"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@null"
+                android:hint="请输入你的用户名"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="16sp" />
+
+        </com.diswy.foundation.view.FancyGroup>
+
+        <com.diswy.foundation.view.FancyGroup
+            android:id="@+id/holder_login_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            app:fg_shape="rounded"
+            app:fg_solid_normal="@color/loginInput"
+            app:layout_constraintEnd_toEndOf="@+id/holder_login_account"
+            app:layout_constraintStart_toStartOf="@id/holder_login_account"
+            app:layout_constraintTop_toBottomOf="@id/holder_login_account">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@null"
+                android:hint="请输入你的密码"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/show_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="26dp"
+                android:button="@drawable/sel_password_show" />
+
+        </com.diswy.foundation.view.FancyGroup>
+
+        <TextView
+            android:id="@+id/login_error_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="你输入的用户名或密码错误，请重新输入"
+            android:textColor="@color/subTitle"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/holder_login_password"
+            app:layout_constraintTop_toBottomOf="@id/holder_login_password"
+            tools:visibility="visible" />
+
+        <com.diswy.foundation.view.FancyButton
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fb_ripple="false"
+            app:fb_shape="rounded"
+            app:fb_solid_normal="#69A716"
+            app:layout_constraintEnd_toEndOf="@+id/holder_login_password"
+            app:layout_constraintStart_toStartOf="@id/holder_login_password"
+            app:layout_constraintTop_toBottomOf="@id/holder_login_password" />
+
+        <com.diswy.foundation.view.FancyButton
+            android:visibility="gone"
+            android:id="@+id/btn_test"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="心理测试"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:fb_ripple="false"
+            app:fb_shape="rounded"
+            app:fb_solid_normal="#69A716"
+            app:layout_constraintEnd_toEndOf="@+id/holder_login_password"
+            app:layout_constraintStart_toStartOf="@id/holder_login_password"
+            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/btn_login"
+            app:layout_constraintStart_toStartOf="@+id/btn_login"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login">
+
+            <TextView
+                android:id="@+id/btn_find_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="忘记账号"
+                android:textColor="@color/subTitle"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/btn_login"
+                app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@color/subTitle" />
+
+            <TextView
+                android:id="@+id/btn_reset_pwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="忘记密码"
+                android:textColor="@color/subTitle"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/btn_login"
+                app:layout_constraintTop_toTopOf="@+id/btn_find_account" />
+
+        </LinearLayout>
+
+        <com.zuoyouxue.view.font.FancyFont
+            android:id="@+id/text_ver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:ff_type="SHAOER"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="v1.0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

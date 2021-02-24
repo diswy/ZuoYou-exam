@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <data>
+
+        <import type="com.diswy.foundation.tools.TimeKitJ" />
+
+        <variable
+            name="shareWork"
+            type="com.ebd.common.vo.SharedWork.SharedWorkItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/share_work_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="128dp"
+        android:paddingEnd="128dp"
+        tools:ignore="ContentDescription">
+
+        <ImageView
+            android:id="@+id/share_work_user_img"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            app:imgCircle="@{shareWork.Photo}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/share_work_student_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="14dp"
+            android:text='@{@string/homework_share_student(shareWork.studentName)}'
+            android:textColor="@color/title"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/share_work_user_img"
+            app:layout_constraintTop_toTopOf="@id/share_work_user_img"
+            tools:text="小小酥同学" />
+
+        <TextView
+            android:id="@+id/share_work_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@{TimeKitJ.YMDHMS(shareWork.createDateTime)}"
+            android:textColor="@color/implicit"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/share_work_user_img"
+            tools:text="2019.07.18  15:32" />
+
+        <TextView
+            android:id="@+id/share_work_question_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="@{shareWork.papersQuestion}"
+            android:textColor="@color/subTitle"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@id/share_work_user_img"
+            app:layout_constraintTop_toBottomOf="@id/share_work_user_img"
+            tools:text="VI.汉翻英 第58题" />
+
+        <LinearLayout
+            android:id="@+id/share_work_answer_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/share_work_question_number" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/line"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/share_work_answer_group">
+
+            <ImageView
+                android:id="@+id/share_work_subject_img"
+                android:layout_width="50dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_work_subject_math" />
+
+            <TextView
+                android:id="@+id/share_work_paper_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{shareWork.papersName}"
+                android:textColor="@color/title"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/share_work_subject_img"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2019级下第14周数学周末培优试卷" />
+
+            <TextView
+                android:id="@+id/share_work_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text='@{@string/homework_share_teacher(shareWork.teacherName)}'
+                android:textColor="@color/implicit"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/share_work_paper_name"
+                app:layout_constraintTop_toBottomOf="@id/share_work_paper_name"
+                tools:text="李翔老师" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

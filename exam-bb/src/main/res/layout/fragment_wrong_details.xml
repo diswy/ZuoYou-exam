@@ -1,0 +1,10 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.homework.WrongDetailsFragment">
+
+    <com.ebd.common.web.view.FancyWeb
+        android:id="@+id/wrong_web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</layout>

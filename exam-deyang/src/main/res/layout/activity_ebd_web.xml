@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ebd_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/base_ic_back_white"
+            app:titleTextColor="@color/white"
+            tools:background="@android:color/holo_blue_dark"
+            tools:title="标题" />
+
+        <com.ebd.common.web.view.FancyWeb
+            android:id="@+id/fancy_web"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ebd_toolbar"
+            tools:background="@color/black" />
+
+        <com.diswy.foundation.view.FancyButton
+            android:id="@+id/btn_start_answer"
+            android:layout_width="128dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:text="开始答题"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:fb_corner_radius="8dp"
+            app:fb_solid_normal="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,78 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.homework.card.SoeCard"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/soe_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/subTitle"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="请阅读下面单词" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:padding="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/soe_record"
+            app:layout_constraintTop_toBottomOf="@id/soe_title"
+            tools:layout_editor_absoluteX="16dp">
+
+            <org.sufficientlysecure.htmltextview.HtmlTextView
+                android:id="@+id/soe_html"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@android:style/TextAppearance.Medium" />
+
+        </ScrollView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/soe_record"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/soe_tv_record"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lottie_fileName="soe-ic-mic.json"
+            app:lottie_repeatCount="-1"
+            app:lottie_repeatMode="restart"
+            tools:src="@mipmap/ic_launcher"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/soe_tv_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="录音"
+            android:textColor="@color/title"
+            app:layout_constraintBottom_toTopOf="@id/soe_layout_score"
+            app:layout_constraintEnd_toEndOf="@+id/soe_record"
+            app:layout_constraintStart_toStartOf="@+id/soe_record" />
+
+        <include
+            android:id="@+id/soe_layout_score"
+            layout="@layout/include_soe_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

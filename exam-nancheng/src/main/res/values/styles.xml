@@ -1,0 +1,77 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="actionMenuTextColor">@color/white</item>
+<!--        <item name="android:windowLightStatusBar">true</item>-->
+        <!--添加后可去除部分系统UI的水波纹点击效果-->
+        <!--<item name="android:colorControlHighlight">@android:color/transparent</item>-->
+    </style>
+
+
+    <style name="ActivityTranslucent" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+    <!--make status bar transparent and make content fill it -->
+    <style name="AppTheme.Translucent" parent="AppTheme">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">#00000000</item>
+    </style>
+    <!--dark front for status bar-->
+    <style name="AppTheme.Translucent.Light" parent="AppTheme.Translucent">
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="AppTheme.launcher" parent="AppTheme.Translucent.Light">
+        <item name="android:windowBackground">@drawable/bg_info_school</item>
+    </style>
+
+    <style name="AppThemeT" parent="AppTheme.Translucent.Light">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <!--设置TabLayout内文字的字体大小-->
+    <style name="MyTabLayoutTextAppearance">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CardSingleButton">
+        <item name="android:gravity">center</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:button">@null</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/sel_single_button</item>
+        <item name="android:textColor">@drawable/sel_single_text_color</item>
+    </style>
+
+    <style name="ProgressBar_Scale_Green" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/progress_scale_green</item>
+    </style>
+
+    <style name="ProgressBar_Scale_Orange" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/progress_scale_orange</item>
+    </style>
+
+    <style name="ProgressBar_Scale_Blue" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/progress_scale_blue</item>
+    </style>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#A6D028</item>
+        <item name="colorControlActivated">#A6D028</item>
+    </style>
+
+</resources>

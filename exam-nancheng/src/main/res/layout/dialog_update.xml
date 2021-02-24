@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rect_white"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/update_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:textColor="@color/homeDeep"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="发现新版本拉！v1.0.0" />
+
+        <TextView
+            android:id="@+id/update_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="12dp"
+            android:lineSpacingExtra="12dp"
+            android:maxLines="5"
+            android:minLines="3"
+            android:scrollbars="none"
+            android:textColor="@color/subTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/update_title"
+            tools:text="1、调节APP界面。\n3、系统内部逻辑优化。" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/update_info">
+
+            <com.diswy.foundation.view.FancyButton
+                android:id="@+id/update_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="下次再说"
+                android:textColor="@color/implicit"
+                app:fb_border_color="@color/implicit"
+                app:fb_border_width="1dp"
+                app:fb_shape="rounded" />
+
+            <Space
+                android:id="@+id/update_gap"
+                android:layout_width="16dp"
+                android:layout_height="match_parent" />
+
+            <com.diswy.foundation.view.FancyButton
+                android:id="@+id/update_confirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="立即升级"
+                android:textColor="@color/white"
+                app:fb_shape="rounded"
+                app:fb_solid_normal="@color/update_confirm" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

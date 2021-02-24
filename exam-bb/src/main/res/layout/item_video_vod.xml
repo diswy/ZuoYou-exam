@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/vod_status"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="回放" />
+
+    <TextView
+        android:id="@+id/vod_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="8dp"
+        android:maxLines="2"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vod_status"
+        app:layout_constraintTop_toTopOf="@id/vod_status"
+        tools:text="课时名" />
+
+    <TextView
+        android:id="@+id/vod_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/vod_name"
+        app:layout_constraintTop_toBottomOf="@id/vod_name"
+        tools:text="老师：云课堂" />
+
+    <TextView
+        android:id="@+id/vod_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/vod_name"
+        app:layout_constraintTop_toTopOf="@id/vod_teacher"
+        tools:text="开课时间：2020" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/vod_playing"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/vod_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vod_status"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="video-playing.json"
+        app:lottie_repeatCount="-1"
+        app:lottie_repeatMode="restart"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

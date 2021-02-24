@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    dataBinding {
+        enabled = true
+    }
+    defaultConfig {
+        applicationId "com.zuoyouxue.exam.deyang"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 7
+        versionName "1.0.6"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        //自定义输出配置
+        android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "deyang_exam_v${variant.versionName}.apk"
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    androidExtensions {
+        experimental = true
+    }
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':common-data')
+
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    kapt "com.alibaba:arouter-compiler:$rootProject.aliRouterCompilerVersion"
+
+    // 骨架屏
+    implementation 'com.ethanhua:skeleton:1.1.2'
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+    // html-text
+    implementation 'org.sufficientlysecure:html-textview:3.9'
+    // 文件下载
+    implementation 'com.liulishuo.okdownload:okdownload:1.0.7'
+}

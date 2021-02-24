@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zuoyouxue.ui.homework.AnswerActivity"
+    tools:ignore="HardcodedText,PxUsage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_q_answer">
+
+        <kit.diswy.player.MusicPlayer
+            android:id="@+id/answer_music_player"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/holder_inner"
+            android:layout_width="1582px"
+            android:layout_height="922px"
+            android:layout_marginBottom="32px"
+            android:background="@drawable/bg_q_answer_inner"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/answer_light"
+                layout="@layout/holder_answer_light"
+                android:layout_width="630px"
+                android:layout_height="match_parent" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/answer_vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/img"
+            android:src="@drawable/ic_corner"
+            app:layout_constraintEnd_toEndOf="@+id/holder_inner"
+            app:layout_constraintTop_toTopOf="@+id/holder_inner" />
+
+        <com.zuoyouxue.view.font.FancyFont
+            android:id="@+id/answer_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_q_time"
+            android:gravity="center"
+            android:textColor="#7CB038"
+            android:textSize="20sp"
+            app:ff_type="HUPO"
+            app:layout_constraintBottom_toTopOf="@+id/holder_inner"
+            app:layout_constraintEnd_toEndOf="@+id/holder_inner"
+            app:layout_constraintStart_toStartOf="@+id/holder_inner"
+            tools:text="125:45:15" />
+
+        <ImageView
+            android:id="@+id/answer_commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30px"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/img"
+            android:src="@drawable/bg_q_commit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="16dp" />
+
+        <!--        <include-->
+        <!--            android:id="@+id/answer_bottom"-->
+        <!--            layout="@layout/holder_answer_bottom"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="@dimen/answer_bottom_bar"-->
+        <!--            android:visibility="gone"-->
+        <!--            app:layout_behavior="@string/bottom_sheet_behavior" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

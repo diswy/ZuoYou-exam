@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/play_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <com.netease.neliveplayer.playerkit.sdk.view.AdvanceTextureView
+            android:id="@+id/player_texture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/play_replay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/img"
+            android:src="@drawable/ic_player_replay"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/play_music"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:contentDescription="@string/img"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_player_music"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/top_control"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/control"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/play_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_play_back" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/play_seek"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:background="@color/control"
+            android:max="100"
+            app:layout_constraintBottom_toTopOf="@id/bottom_control"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/bottom_control"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/control"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/play_pause"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:lottie_fileName="play-pause.json"
+                app:lottie_speed="2.0" />
+
+            <TextView
+                android:id="@+id/play_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="17:00/18:00" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/play_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="倍数"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/play_definition"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="1080P" />
+
+            <ImageButton
+                android:id="@+id/play_full"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:contentDescription="@string/img"
+                android:src="@drawable/ic_play_full_screen" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/play_speed_control"
+            layout="@layout/player_speed"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/play_definition_control"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            android:background="@color/control"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/play_definition_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/player_mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            tools:visibility="gone" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/player_loading"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="running-hero-loading.json"
+            app:lottie_repeatCount="-1"
+            app:lottie_repeatMode="restart"
+            app:lottie_speed="2.0" />
+
+        <LinearLayout
+            android:id="@+id/play_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_record"
+            android:padding="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/play_seek"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/play_record_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                tools:text="上次你观看到03：20，" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否跳转？"
+                android:textColor="@color/recordConfirm" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

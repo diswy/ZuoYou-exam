@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:id="@+id/mImgOtherAvatar"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:contentDescription="@string/img"
+        android:visibility="gone" />
+
+    <Space
+        android:id="@+id/mImgStartSpace"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mChatRoomNick2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            tools:text="昵称" />
+
+        <ImageView
+            android:id="@+id/mImgIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:transitionName="base_single_simple_img" />
+
+    </LinearLayout>
+
+
+    <Space
+        android:id="@+id/mImgEndSpace"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/mImgMyAvatar"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:visibility="gone" />
+
+</LinearLayout>
